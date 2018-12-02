@@ -4,7 +4,7 @@ using AdventOfCode2018;
 namespace AdventOfCode2018.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class Day1Tests
     {
         [TestMethod]
         public void Day1CalculationsPart1()
