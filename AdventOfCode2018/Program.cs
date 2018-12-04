@@ -17,6 +17,12 @@ namespace AdventOfCode2018
             Console.WriteLine("DAY 2");
             Console.ForegroundColor = ConsoleColor.White;
             Day2.Run();
+            
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("DAY 3");
+            Console.ForegroundColor = ConsoleColor.White;
+            Day3.Run();
         }
     }
 }
