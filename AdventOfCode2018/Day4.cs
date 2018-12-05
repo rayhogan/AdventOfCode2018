@@ -139,19 +139,15 @@ namespace AdventOfCode2018
             {
                 int minute = guard.Value.FindMostSleepyMinute();
 
-                if (minute != 0)
+                int numberOfTimes = guard.Value.HowManyTimesMinuteSlept(minute);
+
+                if (numberOfTimes >= timesSlept)
                 {
-
-                    int numberOfTimes = guard.Value.HowManyTimesMinuteSlept(minute);
-
-                    if (numberOfTimes >= timesSlept)
-                    {
-                        Console.WriteLine("Slept Minute: " + minute + " For this number: " + numberOfTimes);
-                        sleepyMinute = minute;
-                        guardID = guard.Key;
-                        timesSlept = numberOfTimes;
-                    }
+                    sleepyMinute = minute;
+                    guardID = guard.Key;
+                    timesSlept = numberOfTimes;
                 }
+
             }
 
             result[0, 0] = guardID;
