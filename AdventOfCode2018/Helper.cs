@@ -13,6 +13,13 @@ namespace AdventOfCode2018
             return input;
         }
 
+        public static string ParseSingleLineInput(string location)
+        {
+            string input = System.IO.File.ReadAllText(location);
+
+            return input;
+        }
+
         public static string Between(string value, string a, string b)
         {
             int posA = value.IndexOf(a);
