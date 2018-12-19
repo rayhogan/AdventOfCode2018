@@ -40,8 +40,12 @@ namespace AdventOfCode2018
 
         public static CoordinateManager CreateDataStructure(string[] input, int safeLocationThreshold)
         {
+            // Create new Coordinate manager
             CoordinateManager output = new CoordinateManager(safeLocationThreshold);
+            // Start the ID numbering at 1
             int id = 1;
+            
+            // Loop through input and parse the X Y co-ords and add them to Co-ord manager
             foreach (string s in input)
             {
                 string[] split = s.Split(',');
