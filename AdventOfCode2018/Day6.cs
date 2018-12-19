@@ -11,37 +11,36 @@ namespace AdventOfCode2018
     {
         public static void Run()
         {
-            string[] input = Helper.ParseInput(@"Inputs\\Day6.txt");
+            string[] input = Helper.ParseInput(@"..\..\..\Inputs\\Day6.txt");
 
-            Part1(input);
-            Part2(input);
+            Part1and2(input);
         }
 
-        private static void Part1(string[] input)
+        private static void Part1and2(string[] input)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Part I");
             Console.ForegroundColor = ConsoleColor.White;
+            
+            CoordinateManager data = Day6.CreateDataStructure(input, 10000);
+            data.CalculateNearestCoordsAndSafePlaces();
+            int largestArea = data.CalculateLargestArea();
 
-            Coordinates coords = CreateDataStructure(input);
+            Console.WriteLine("Largest Area: "+largestArea);
 
-            Console.WriteLine("");
 
-        }
-
-        private static void Part2(string[] input)
-        {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Part II");
             Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine("");
+            Console.WriteLine("Safe Locations: "+data.SafeLocations);
 
         }
 
-        public static Coordinates CreateDataStructure(string[] input)
+
+        public static CoordinateManager CreateDataStructure(string[] input, int safeLocationThreshold)
         {
-            Coordinates output = new Coordinates();
+            CoordinateManager output = new CoordinateManager(safeLocationThreshold);
             int id = 1;
             foreach (string s in input)
             {
@@ -50,7 +49,7 @@ namespace AdventOfCode2018
                 int x = Convert.ToInt32(split[0].Trim());
                 int y = Convert.ToInt32(split[1].Trim());
 
-                output.Coords.Add(new Coordinate(id, x, y));
+                output.Coords.Add(new Coordinate(id, y, x));
                 id++;
             }
 
@@ -58,30 +57,7 @@ namespace AdventOfCode2018
 
         }
 
-        public static void CalculateNearestCoords(ref Coordinates input)
-        {
-
-            Coordinate stoppingPoint = input.GetFurthestCoordinate();
-
-            for (int i = 0; i < stoppingPoint.x; i++)
-            {
-                for (int j = 0; j < stoppingPoint.y; j++)
-                {
-                    int ID = 0;
-                    int count = Int32.MaxValue;
-                    foreach(Coordinate c in input.Coords)
-                    {
-                        
-                        int distance = Math.Abs((i - c.x) + (j - c.y));
-                        if(distance < count)
-                        {
-                            count = distance;
-                            //ID = c.
-                        }
-                    }
-                }
-            }
-        }
+        
 
     }
 }

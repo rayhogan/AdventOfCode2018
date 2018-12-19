@@ -6,7 +6,7 @@ namespace AdventOfCode2018
     {
         static void Main(string[] args)
         {
-            /*
+            
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("DAY 1");
             Console.ForegroundColor = ConsoleColor.White;
@@ -35,7 +35,8 @@ namespace AdventOfCode2018
             Console.WriteLine("DAY 5");
             Console.ForegroundColor = ConsoleColor.White;
             Day5.Run();
-            */
+
+            
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("DAY 6");
             Console.ForegroundColor = ConsoleColor.White;

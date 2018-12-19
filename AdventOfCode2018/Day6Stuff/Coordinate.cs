@@ -11,7 +11,8 @@ namespace AdventOfCode2018.Day6Stuff
             x = _x;
             y = _y;
             id = _id;
-            count = 1;
+            count = 0;
+            isInfinite = false;
         }
 
         public int id { get; }
@@ -19,5 +20,7 @@ namespace AdventOfCode2018.Day6Stuff
         public int y { get; set; }
 
         public int count { get; set; }
+
+        public bool isInfinite { get; set; }
     }
 }
